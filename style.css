@@ -1,7 +1,42 @@
 * {
     box-sizing: border-box;
+    /* The width and height of the element apply to all parts of the element: the content, the padding and the borders. */
 }
 
-body {
+body,
+h1 {
     margin: 0;
+    /* Resets the externes margins of the body and h1 elements  */
+}
+
+/* ----------------*/
+/* NAVigation menu */
+/* ----------------*/
+nav {
+    background-color: #f76c6c;
+    /* Defines the background color */
+    color: #ffffff;
+    /* Defines the font color for all element in nav */
+    padding: 1rem 0rem 0.1rem 1rem;
+    /* Defines a internes margin TOP/RIGHT/BOTTOM/LEFT*/
+    font-size: 1.5rem;
+    /* Defines size of the font */
+}
+
+/* Unordered list in nav */
+
+nav ul {
+    padding: 0;
+    /* Defines a internes margin */
+
+}
+
+/* list item in nav */
+nav li {
+
+    list-style-type: none;
+    /* removes the bullet from the list items */
+    display: inline-block;
+    /* Allows li to be displayed on the same line */
+
 }
