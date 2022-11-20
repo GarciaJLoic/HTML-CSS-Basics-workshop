@@ -32,6 +32,12 @@ nav {
     /* Defines a internes margin TOP/RIGHT/BOTTOM/LEFT*/
     font-size: 1.5rem;
     /* Defines size of the font */
+    position: fixed;
+    /* Nav is fixed in the top of the page */
+    top: 0;
+    /* Places the nav at the top of the page  */
+    width: 100%;
+    /* Nav takes up all the space */
 }
 
 /* Unordered list in nav */
@@ -45,12 +51,35 @@ nav ul {
 
 /* list item in nav */
 nav li {
-
     list-style-type: none;
     /* removes the bullet from the list items */
     display: inline-block;
     /* Allows li to be displayed on the same line */
 
+}
+
+/* link in nav */
+
+nav a {
+    color: #ffffff;
+    /* Defines the font color link in nav */
+    text-decoration: none;
+    /* Remove link decoration */
+    padding: 0rem 0.2rem;
+    /* Defines a internes margin vertical / horizontal*/
+}
+
+/* link in nav when is hover*/
+
+nav a:hover {
+    background-color: #ffffff;
+    /* Defines the background color */
+    color: #f76c6c;
+    /* Defines the font color link in nav */
+    box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem #7d7d7d;
+    /* Defines the shadow of the element TOP RIGHT BOTTOM LEFT COLOR*/
+    border-radius: 5px;
+    /* Defines the raduis of the element's corners*/
 }
 
 /* -----------------*/
@@ -66,6 +95,8 @@ header {
     /* The background image will only appear once.*/
     background-size: cover;
     /* resize the background image to make sure the element takes up all the space. */
+    margin-top: 100px;
+    /*adds an external margin to compensate for the nav which is fixed position */
 }
 
 /* Titre h1 in header */
@@ -103,7 +134,7 @@ section {
     /*.featured is turned into an grid container. Its child element will be tured into grid items*/
     grid-template-columns: repeat(2, 1fr);
     /* Generate 2 grid columns with the same dimensions */
-    grid-template-rows: repeat(3, 6rem);
+    grid-template-rows: 3.5rem repeat(2, 6rem);
     /* Generate 2 grid rows with the same dimensions */
     grid-column-gap: 25px;
     /* Defines espace between columns */
@@ -120,6 +151,8 @@ section {
 /* All article contained in .featured */
 
 .featured article {
+    background-color: #ffffff;
+    /* Defines the background color */
     box-shadow: 0.1rem 0.2rem 0.2rem 0.3rem #7d7d7d;
     /* Defines the shadow of the element TOP RIGHT BOTTOM LEFT COLOR*/
     border-radius: 8px;
@@ -132,6 +165,16 @@ section {
     /* Text becomes bold */
     font-size: 1.3rem;
     /* Defines size of font article */
+}
+
+/* article in .featured when is hover*/
+.featured article:hover {
+    background-color: #f76c6c;
+    /* Defines the background color  on hover */
+    color: #ffffff;
+    /* Defines the font color for all element in article on hover*/
+    transition: background-color 0.4s linear, color 0.4s linear;
+    /* Shorthand property for transition-property transition-duration and transition-timing-function*/
 }
 
 /* Second element contained in .featured */
