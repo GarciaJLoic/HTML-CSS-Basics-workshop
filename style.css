@@ -40,3 +40,30 @@ nav li {
     /* Allows li to be displayed on the same line */
 
 }
+
+/* ----------------*/
+/*      HEADER     */
+/* ----------------*/
+
+header {
+    min-height: 350px;
+    /* Defines a minimun height for the header */
+    background-image: url(https://loremflickr.com/cache/resized/65535_51720087764_d11176e0a1_k_1200_300_nofilter.jpg);
+    /* Add background in the header */
+    background-repeat: no-repeat;
+    /* The background image will only appear once.*/
+    background-size: cover;
+    /* resize the background image to make sure the element takes up all the space. */
+}
+
+/* Titre h1 in header */
+header h1 {
+    color: #ffffff;
+    /* Change the font color of h1 in header */
+    text-align: center;
+    /* Aligns the h1 verticaly */
+    padding-top: 6rem;
+    /* Add a internal marge at the top of h1 in header*/
+    font-size: 3rem;
+    /* Change the font size of h1 in header */
+}
