@@ -4,7 +4,8 @@
 }
 
 body,
-h1 {
+h1,
+p {
     margin: 0;
     /* Resets the externes margins of the body and h1 elements  */
 }
@@ -37,8 +38,9 @@ nav {
 
 nav ul {
     padding: 0;
-    /* Defines a internes margin */
-
+    /* Defines internes margin */
+    margin: 0.3rem 0rem;
+    /* Defines external margin Vertical / Horizontal */
 }
 
 /* list item in nav */
@@ -157,4 +159,22 @@ section {
 .featured :nth-child(5) {
     grid-area: 3 / 2 / 4 / 3;
     /* Defines row start /column start / row end / column end of a grid item*/
+}
+
+/*---------*/
+/* FOOTER */
+/*-------*/
+
+footer {
+    background-color: #f76c6c;
+    /* Defines the background color */
+    line-height: 3.5rem;
+    /* Change line heigth of all elements in body */
+
+}
+
+/* paragraph in footer */
+footer p {
+    margin-left: 10px;
+    /* Adds external margin-left on paragraph in footer */
 }
