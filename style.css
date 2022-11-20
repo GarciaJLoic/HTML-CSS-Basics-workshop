@@ -19,9 +19,9 @@ body {
 
 }
 
-/* ----------------*/
+/* -----------------*/
 /* NAVigation menu */
-/* ----------------*/
+/* ---------------*/
 nav {
     background-color: #f76c6c;
     /* Defines the background color */
@@ -51,9 +51,9 @@ nav li {
 
 }
 
-/* ----------------*/
+/* -----------------*/
 /*      HEADER     */
-/* ----------------*/
+/* ---------------*/
 
 header {
     min-height: 350px;
@@ -79,9 +79,9 @@ header h1 {
 }
 
 
-/*--------------*/
+/*---------------*/
 /* ALL SECTIONS */
-/*--------------*/
+/*-------------*/
 section {
     max-width: 75ch;
     /* Sets the maximal width of all sections according to the number of caractere */
@@ -91,6 +91,70 @@ section {
     /* Justify the texts of all sections */
 }
 
-/*-------------------------*/
-/* FIRST SECTION: About us */
-/*-------------------------*/
+/*-----------------------------*/
+/* SECTION2 : Featured posts  */
+/*---------------------------*/
+
+/* Element with featured class */
+.featured {
+    display: grid;
+    /*.featured is turned into an grid container. Its child element will be tured into grid items*/
+    grid-template-columns: repeat(2, 1fr);
+    /* Generate 2 grid columns with the same dimensions */
+    grid-template-rows: repeat(3, 6rem);
+    /* Generate 2 grid rows with the same dimensions */
+    grid-column-gap: 25px;
+    /* Defines espace between columns */
+    grid-row-gap: 20px;
+    /* Defines espace between rows */
+}
+
+/* h2 contained in .featured */
+.featured h2 {
+    grid-area: 1 / 1 / 2 / 3;
+    /* Defines row start /column start / row end / column end of a grid item*/
+}
+
+/* All article contained in .featured */
+
+.featured article {
+    box-shadow: 0.1rem 0.2rem 0.2rem 0.3rem #7d7d7d;
+    /* Defines the shadow of the element TOP RIGHT BOTTOM LEFT COLOR*/
+    border-radius: 8px;
+    /* Defines the raduis of the element's corners*/
+    line-height: 6rem;
+    /* Defines line height of the all article with .featured */
+    padding-left: 1rem;
+    /* Defines internal marges */
+    font-weight: bold;
+    /* Text becomes bold */
+    font-size: 1.3rem;
+    /* Defines size of font article */
+}
+
+/* Second element contained in .featured */
+.featured :nth-child(2) {
+    grid-area: 2 / 1 / 3 / 2;
+    /* Defines row start /column start / row end / column end of a grid item*/
+}
+
+/* Third element contained in .featured */
+
+.featured :nth-child(3) {
+    grid-area: 2 / 2 / 3 / 3;
+    /* Defines row start /column start / row end / column end of a grid item*/
+}
+
+/* Fourth element contained in .featured */
+
+.featured :nth-child(4) {
+    grid-area: 3 / 1 / 4 / 2;
+    /* Defines row start /column start / row end / column end of a grid item*/
+}
+
+/* Fifth element contained in .featured */
+
+.featured :nth-child(5) {
+    grid-area: 3 / 2 / 4 / 3;
+    /* Defines row start /column start / row end / column end of a grid item*/
+}
