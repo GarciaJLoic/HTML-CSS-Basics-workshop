@@ -9,6 +9,16 @@ h1 {
     /* Resets the externes margins of the body and h1 elements  */
 }
 
+body {
+    background-color: #c2c2c2;
+    /* Defines the background color */
+    line-height: 1.5;
+    /* Change line heigth of all elements in body */
+    font-family: Verdana;
+    /* Change font of all elements in body */
+
+}
+
 /* ----------------*/
 /* NAVigation menu */
 /* ----------------*/
@@ -67,3 +77,20 @@ header h1 {
     font-size: 3rem;
     /* Change the font size of h1 in header */
 }
+
+
+/*--------------*/
+/* ALL SECTIONS */
+/*--------------*/
+section {
+    max-width: 75ch;
+    /* Sets the maximal width of all sections according to the number of caractere */
+    margin: 2.5rem auto;
+    /* Centres horizontaly and adds external margin-top and margin-bottom of all sections  */
+    text-align: justify;
+    /* Justify the texts of all sections */
+}
+
+/*-------------------------*/
+/* FIRST SECTION: About us */
+/*-------------------------*/
