@@ -13,9 +13,11 @@
 }
 
 body,
+h1,
+h2,
 p {
     margin: 0;
-    /* Resets the externes margins of the body and h1 elements  */
+    /* Resets the externes margins of the body, h1, h2 and p elements  */
 }
 
 body {
@@ -105,7 +107,7 @@ header {
     /* The flexbox items are aligned at the center of the cross axis. Here Verticaly*/
     min-height: 350px;
     /* Defines a minimun height for the header */
-    background-image: url(https://loremflickr.com/cache/resized/65535_51720087764_d11176e0a1_k_1200_300_nofilter.jpg);
+    background-image: url(background.jpeg);
     /* Add background in the header */
     background-size: cover;
     /* resize the background image to make sure the element takes up all the space. */
@@ -148,7 +150,7 @@ section {
 }
 
 /* h2 contained in .featured */
-.featured h2 {
+.featured>h2 {
     grid-column: 1 / -1;
     /* Allows h2 to take all columns no matter how many */
 }
@@ -177,8 +179,6 @@ section {
     /* Defines internal marges */
     font-weight: bold;
     /* Text becomes bold */
-    font-size: 1.3rem;
-    /* Defines size of font article */
     transition: background-color 0.4s linear, color 0.4s linear;
     /* Shorthand property for transition-property transition-duration and transition-timing-function*/
 }
@@ -194,6 +194,10 @@ section {
     /* Shorthand property for transition-property transition-duration and transition-timing-function*/
 }
 
+.featured article h2 {
+    font-size: 1.3rem;
+    /* Defines font size of h2 in article */
+}
 
 
 /*---------*/
