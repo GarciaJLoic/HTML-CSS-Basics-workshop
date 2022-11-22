@@ -1,36 +1,42 @@
+/* Defines variables */
+:root {
+    --primary-color: #f76c6c;
+    --secondary-color: #c2c2c2;
+    --text-font-family: Verdana;
+}
+
+/* Design for mobile -> 1200px */
+
 * {
     box-sizing: border-box;
     /* The width and height of the element apply to all parts of the element: the content, the padding and the borders. */
 }
 
 body,
-h1,
 p {
     margin: 0;
     /* Resets the externes margins of the body and h1 elements  */
 }
 
 body {
-    background-color: #c2c2c2;
+    background-color: var(--secondary-color);
     /* Defines the background color */
     line-height: 1.5;
     /* Change line heigth of all elements in body */
-    font-family: Verdana;
+    font-family: var(--text-font-family);
     /* Change font of all elements in body */
 
 }
 
-/* -----------------*/
-/* NAVigation menu */
-/* ---------------*/
 nav {
-    background-color: #f76c6c;
+
+    background-color: var(--primary-color);
     /* Defines the background color */
-    color: #ffffff;
+    color: white;
     /* Defines the font color for all element in nav */
-    padding: 1rem 0rem 0.1rem 1rem;
+    padding: 0.7em;
     /* Defines a internes margin TOP/RIGHT/BOTTOM/LEFT*/
-    font-size: 1.5rem;
+    font-size: 1.5em;
     /* Defines size of the font */
     position: fixed;
     /* Nav is fixed in the top of the page */
@@ -38,14 +44,22 @@ nav {
     /* Places the nav at the top of the page  */
     width: 100%;
     /* Nav takes up all the space */
+    display: flex;
+    /* Nav is turned into an flexbox  */
+    justify-content: space-between;
+    /* The remaining space is distributed between the flexbox/grid items. */
+    align-items: center;
+    /* The flexbox items are aligned at the center of the cross axis. */
+    z-index: 1;
+    /* The Nav is placed in the foreground, above the other blocks.*/
 }
 
-/* Unordered list in nav */
-
 nav ul {
-    padding: 0;
-    /* Defines internes margin */
-    margin: 0.3rem 0rem;
+    display: flex;
+    /* Nav ul is turned into an flexbox  */
+    flex-direction: column;
+    /* Change direction ul on column */
+    margin: 0.3rem 2rem;
     /* Defines external margin Vertical / Horizontal */
 }
 
@@ -53,20 +67,14 @@ nav ul {
 nav li {
     list-style-type: none;
     /* removes the bullet from the list items */
-    display: inline-block;
-    /* Allows li to be displayed on the same line */
 
 }
-
-/* link in nav */
 
 nav a {
     color: #ffffff;
     /* Defines the font color link in nav */
     text-decoration: none;
     /* Remove link decoration */
-    padding: 0rem 0.2rem;
-    /* Defines a internes margin vertical / horizontal*/
 }
 
 /* link in nav when is hover*/
@@ -74,7 +82,7 @@ nav a {
 nav a:hover {
     background-color: #ffffff;
     /* Defines the background color */
-    color: #f76c6c;
+    color: var(--primary-color);
     /* Defines the font color link in nav */
     box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem #7d7d7d;
     /* Defines the shadow of the element TOP RIGHT BOTTOM LEFT COLOR*/
@@ -82,20 +90,26 @@ nav a:hover {
     /* Defines the raduis of the element's corners*/
 }
 
+
+
 /* -----------------*/
 /*      HEADER     */
 /* ---------------*/
 
 header {
+    display: flex;
+    /* header is turned into an flexbox  */
+    justify-content: center;
+    /*The flexbox/grid items are centered along the container's main axis.*/
+    align-items: center;
+    /* The flexbox items are aligned at the center of the cross axis. Here Verticaly*/
     min-height: 350px;
     /* Defines a minimun height for the header */
     background-image: url(https://loremflickr.com/cache/resized/65535_51720087764_d11176e0a1_k_1200_300_nofilter.jpg);
     /* Add background in the header */
-    background-repeat: no-repeat;
-    /* The background image will only appear once.*/
     background-size: cover;
     /* resize the background image to make sure the element takes up all the space. */
-    margin-top: 100px;
+    margin-top: 150px;
     /*adds an external margin to compensate for the nav which is fixed position */
 }
 
@@ -103,20 +117,15 @@ header {
 header h1 {
     color: #ffffff;
     /* Change the font color of h1 in header */
-    text-align: center;
-    /* Aligns the h1 verticaly */
-    padding-top: 6rem;
-    /* Add a internal marge at the top of h1 in header*/
-    font-size: 3rem;
-    /* Change the font size of h1 in header */
+    font-size: clamp(45px, 6vw, 8rem);
+    /* Sets the font size according to the size of the display window and the font size. */
 }
-
 
 /*---------------*/
 /* ALL SECTIONS */
 /*-------------*/
 section {
-    max-width: 75ch;
+    max-width: 50ch;
     /* Sets the maximal width of all sections according to the number of caractere */
     margin: 2.5rem auto;
     /* Centres horizontaly and adds external margin-top and margin-bottom of all sections  */
@@ -132,20 +141,23 @@ section {
 .featured {
     display: grid;
     /*.featured is turned into an grid container. Its child element will be tured into grid items*/
-    grid-template-columns: repeat(2, 1fr);
-    /* Generate 2 grid columns with the same dimensions */
-    grid-template-rows: 3.5rem repeat(2, 6rem);
-    /* Generate 2 grid rows with the same dimensions */
-    grid-column-gap: 25px;
-    /* Defines espace between columns */
-    grid-row-gap: 20px;
-    /* Defines espace between rows */
+    grid-template: 3.5em repeat(3, 6em) / repeat(2, 1fr);
+    /* Generate 4 grid rows and 2 grid columns*/
+    gap: 1.4em 1em;
+    /* Defines espace between rows and between columns */
 }
 
 /* h2 contained in .featured */
 .featured h2 {
-    grid-area: 1 / 1 / 2 / 3;
-    /* Defines row start /column start / row end / column end of a grid item*/
+    grid-column: 1 / -1;
+    /* Allows h2 to take all columns no matter how many */
+}
+
+
+/* first article contained in .featured */
+.featured article:first-of-type {
+    grid-column: 1 / 3;
+    /* Defines column start / column end of a grid item*/
 }
 
 /* All article contained in .featured */
@@ -153,63 +165,43 @@ section {
 .featured article {
     background-color: #ffffff;
     /* Defines the background color */
+    color: var(--primary-color);
+    /* Defines the font color for all element in article*/
     box-shadow: 0.1rem 0.2rem 0.2rem 0.3rem #7d7d7d;
     /* Defines the shadow of the element TOP RIGHT BOTTOM LEFT COLOR*/
     border-radius: 8px;
     /* Defines the raduis of the element's corners*/
     line-height: 6rem;
     /* Defines line height of the all article with .featured */
-    padding-left: 1rem;
+    padding-left: 1em;
     /* Defines internal marges */
     font-weight: bold;
     /* Text becomes bold */
     font-size: 1.3rem;
     /* Defines size of font article */
+    transition: background-color 0.4s linear, color 0.4s linear;
+    /* Shorthand property for transition-property transition-duration and transition-timing-function*/
 }
+
 
 /* article in .featured when is hover*/
 .featured article:hover {
-    background-color: #f76c6c;
+    background-color: var(--primary-color);
     /* Defines the background color  on hover */
-    color: #ffffff;
+    color: white;
     /* Defines the font color for all element in article on hover*/
     transition: background-color 0.4s linear, color 0.4s linear;
     /* Shorthand property for transition-property transition-duration and transition-timing-function*/
 }
 
-/* Second element contained in .featured */
-.featured :nth-child(2) {
-    grid-area: 2 / 1 / 3 / 2;
-    /* Defines row start /column start / row end / column end of a grid item*/
-}
 
-/* Third element contained in .featured */
-
-.featured :nth-child(3) {
-    grid-area: 2 / 2 / 3 / 3;
-    /* Defines row start /column start / row end / column end of a grid item*/
-}
-
-/* Fourth element contained in .featured */
-
-.featured :nth-child(4) {
-    grid-area: 3 / 1 / 4 / 2;
-    /* Defines row start /column start / row end / column end of a grid item*/
-}
-
-/* Fifth element contained in .featured */
-
-.featured :nth-child(5) {
-    grid-area: 3 / 2 / 4 / 3;
-    /* Defines row start /column start / row end / column end of a grid item*/
-}
 
 /*---------*/
 /* FOOTER */
 /*-------*/
 
 footer {
-    background-color: #f76c6c;
+    background-color: var(--primary-color);
     /* Defines the background color */
     line-height: 3.5rem;
     /* Change line heigth of all elements in body */
@@ -220,4 +212,78 @@ footer {
 footer p {
     margin-left: 10px;
     /* Adds external margin-left on paragraph in footer */
+}
+
+/*---------------------------------------------------------------------------------*/
+/*                                 MEDIA QUERIES                                   */
+/*--------*******************************************************************------*/
+
+
+@media screen and (min-width: 1200px) {
+
+    /* -----------------*/
+    /* NAVigation menu */
+    /* ---------------*/
+    nav {
+        height: 100px;
+        /* Sets the height to compensate for the top margin of the header.*/
+    }
+
+    /* Unordered list in nav */
+
+    nav ul {
+        flex-direction: initial;
+
+        /* Return to default property*/
+    }
+
+    /* link in nav */
+
+    nav a {
+        padding: 0rem 1rem;
+        /* Defines a internes margin vertical / horizontal*/
+    }
+
+
+    /* -----------------*/
+    /*      HEADER     */
+    /* ---------------*/
+
+    header {
+        margin-top: 100px;
+        /*adds an external margin to compensate for the nav which is fixed position */
+    }
+
+
+    /*---------------*/
+    /* ALL SECTIONS */
+    /*-------------*/
+    section {
+        max-width: 75ch;
+        /* Sets the maximal width of all sections according to the number of caractere */
+    }
+
+    /*-----------------------------*/
+    /* SECTION2 : Featured posts  */
+    /*---------------------------*/
+
+    /* Element with featured class */
+    .featured {
+        grid-template: 3.5rem repeat(2, 6rem)/ repeat(4, 1fr);
+        /* Generate 3 grid rows and 4 grid columns*/
+    }
+
+    /* Second element contained in .featured */
+    .featured article:first-of-type {
+        grid-area: 2 / 1 / 4 / 3;
+        /* Defines row start /column start / row end / column end of a grid item*/
+    }
+}
+
+/* Ignore printers context */
+@media screen {
+
+    header h1 {
+        filter: drop-shadow(15px 10px 9px var(--primary-color))
+    }
 }
